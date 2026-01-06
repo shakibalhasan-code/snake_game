@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Neon Snake.io</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <div class="ui-layer">
+
+        <!-- Start Screen -->
+        <div id="start-screen" class="center-card">
+            <h1>NEON SNAKE</h1>
+            <input type="text" id="player-name" placeholder="ENTER NICKNAME" maxlength="10">
+
+            <div class="custom-select-wrapper">
+                <div class="custom-select">
+                    <div class="custom-select__trigger">
+                        <span id="selected-mode">Infinity Mode</span>
+                        <div class="arrow">▼</div>
+                    </div>
+                    <div class="custom-options">
+                        <span class="custom-option selected" data-value="infinite">Infinity Mode</span>
+                        <span class="custom-option" data-value="time">Time Rush (2m)</span>
+                        <span class="custom-option" data-value="survival">Survival</span>
+                        <span class="custom-option" data-value="speed">Speed Force</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skin-selector">
+                <button class="skin-btn" id="prev-skin">❮</button>
+                <div id="skin-preview"></div>
+                <button class="skin-btn" id="next-skin">❯</button>
+            </div>
+
+            <button id="start-btn" class="neon-btn">PLAY NOW</button>
+        </div>
+
+        <!-- HUD -->
+        <div id="hud" class="hud hidden">
+            <div class="info-panel">
+                <div class="score-badge">
+                    <span id="level-indicator" class="level-badge">LVL 1</span>
+                    <span id="score">0</span>
+                </div>
+                <!-- XP Bar -->
+                <div class="xp-container">
+                    <div class="xp-fill" id="xp-bar"></div>
+                </div>
+            </div>
+
+            <div class="leaderboard">
+                <h3>TOP PLAYERS</h3>
+                <ul id="leaderboard-list">
+                    <!-- Populated by JS -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Game Over -->
+        <div id="game-over-screen" class="center-card hidden">
+            <h1>GAME OVER</h1>
+            <p style="margin-bottom: 20px; font-size: 1.2rem; color: #aaa;">FINAL SCORE</p>
+            <div class="score-badge" style="margin: 0 auto 30px auto; width: fit-content;">
+                <span id="final-score">0</span>
+            </div>
+            <button id="restart-btn" class="neon-btn">PLAY AGAIN</button>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/utils.js"></script>
+    <script src="js/spatial-grid.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/food.js"></script>
+    <script src="js/snake.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>
